@@ -6,7 +6,6 @@ public class Main {
 
         checkCharNum(variable);
     }
-
     public static void checkCharNum(char variable) {
         try {
             if (Character.isDigit(variable)) {
