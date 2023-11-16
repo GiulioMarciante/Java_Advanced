@@ -9,13 +9,12 @@ public class Main {
 
         StringBuilder isNumber = new StringBuilder("The character is a number? ");
 
-            if(!Character.isDigit(variable)){
-                isNumber.append("false");
-                throw new ArithmeticException("" + isNumber);
-            }
-            else{
-                System.out.println(isNumber);
-                return true;
-            }
+        if (Character.isDigit(variable)) {
+            System.out.println(isNumber);
+            return true;
+        } else {
+            isNumber.append("false");
+            throw new ArithmeticException("" + isNumber);
+        }
     }
 }
