@@ -1,19 +1,17 @@
 package Exceptions3;
-
+//Scrivere una funzione che provi a dividere un numero per 0 e catturi l'eccezione leggendone il messaggio.
 public class Main {
     public static void main(String[] args) {
-        int number = 5;
+
+        int numerator = 6;
+
+        int denominator = 0;
+
         try {
-            divisionFunction(number);
+            int division = numerator/denominator;
         }
         catch (ArithmeticException e){
             System.out.println("Error " + e.getMessage());
         }
-    }
-    public static int divisionFunction(int number){
-
-        int result = number/0;
-
-        return result;
     }
 }
