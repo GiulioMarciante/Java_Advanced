@@ -9,19 +9,24 @@ public class Main {
 
         arrayNum = new int[]{1, 2, 3, 4, 5};
 
-        int i = 9;
-        division(arrayNum,i);
+        int i = 4;
+
+        arrayDivision(arrayNum,i);
+
     }
-    public static void division(int[] array, int i){
+    public static void arrayDivision(int[] arrayNum, int index){
+
         try {
-            if (i > array[5]) {
-                throw new ArrayIndexOutOfBoundsException();
-            } else {
-                throw new ArithmeticException();
-            }
-        }
-        catch(ArrayIndexOutOfBoundsException | ArithmeticException e){
-            System.out.println("Error " + e);
+            int result = arrayNum[index]/0;
+
+        } catch (ArithmeticException e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            System.out.println("Index not present in the array. " + e.getMessage());
+
         }
     }
 }
