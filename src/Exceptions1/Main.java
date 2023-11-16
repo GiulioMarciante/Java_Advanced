@@ -4,25 +4,16 @@ package Exceptions1;
 public class Main {
     public static void main(String[] args) {
 
-        int variable = 50;
+        int number = 11;
 
-        System.out.println(checkNum(variable));
-
+        System.out.println(checkNum(number));
     }
-    //da errore se i numeri sono in range tra 1 e 50
-    public static boolean checkNum(int number){
+    public static boolean checkNum(int number) {
 
-        boolean result = true;
-
-        try {
-            if(number <= 0 || number > 50){
-                throw new ArithmeticException();
-            }
+        if (number > 10 || number < 0) {
+            throw new ArithmeticException();
+        } else {
+            return true;
         }
-        catch(Exception e){
-            System.out.println("Errore: " + e);
-            result = false;
-        }
-        return result;
     }
 }
