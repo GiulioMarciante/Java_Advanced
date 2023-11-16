@@ -5,29 +5,31 @@ package Null1;
 public class Main {
     public static void main(String[] args) {
 
-        Double numerator  = 5.0;
+        Double numerator  = 42.0;
 
-        Double denominator = null;
+        Double denominator = 0.0;
 
         try {
-            if(numerator != null ){
-                System.out.println("Numerator: " + numerator);
-            }else {
-                throw new Exception();
-            }
+            System.out.println(checkNull(numerator,denominator));
+        }
+        catch (ArithmeticException e){
+            System.out.println("The denominator is 0");
         }
         catch (Exception e){
-            System.out.println("Numerator: " + e.getMessage());
+                System.out.println("One of the number is null");
         }
-        try {
-            if (denominator == null ) {
-                System.out.println("Denominator: " + denominator);
-            } else {
-                throw new Exception();
-            }
-        }
-        catch (Exception e){
-                System.out.println("Denominator: " + e.getMessage());
+    }
+    public static Double checkNull(Double numerator, Double denominator) throws Exception {
+        if (numerator == null || denominator == null) {
+
+            throw new Exception();
+
+        } else if(denominator == 0){
+
+            throw new ArithmeticException();
+
+        } else {
+            return numerator/denominator;
         }
     }
 }
